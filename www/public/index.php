@@ -1,15 +1,3 @@
-<?php
-
-if (session_status() === PHP_SESSION_NONE) {
-  // Startet die Session, bzw. stellt sie wieder her, falls vorhanden.
-  session_start();
-}
-
-
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,34 +11,17 @@ if (session_status() === PHP_SESSION_NONE) {
 
 
 
-  <form action="quiz.php" method="post">
-    <?php
+  <form action="quiz.php" method="GET">
 
-    $start = 1;
-    if ($start == 1) {
 
-      echo "<input type='text' name='start' id='name'>
-      <input type='submit' value='start'>";
-    }
 
-    ?>
+
+    <input type='text' name='start' id='name'>
+    <input type='submit' value='start' name="btn">;
+
   </form>
 
-  <?php
-  if (isset($_POST['start'])) {
-    $_SESSION['start'] = "startpage";
 
-    $page = $_SESSION['start'];
-
-    echo $page;
-
-
-    // header('Location: /feedback.php');
-  }
-
-
-
-  ?>
 
 
 
