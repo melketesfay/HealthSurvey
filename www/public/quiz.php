@@ -25,6 +25,67 @@ Malzeiten kommen aus der Mikrowelle
 oder sind schon fertig zubereitet?"];
 
 
+define("QUESTION_3", []);
+
+
+$QUESTION_3 = ['question_4', 'question_4_1', 'question_4_2', 'question_4_3', 'question_4_4', 'question_4_5', 'question_4_6', 'question_4_6', 'question_4_7', 'question_4_8', 'question_4_9', 'question_4_10', 'question_4_10'];
+
+
+
+function checkMultipleInput($input)
+{
+    foreach ($input as $inputValue) {
+        if (isset($_GET[$inputValue])) {
+            $_SESSION[$inputValue] = $_GET[$inputValue];
+        } else {
+            $_SESSION[$inputValue] = "no Value given";
+        }
+    }
+    return true;
+}
+
+
+
+function test($input)
+{
+    $test = [];
+    foreach ($input as $inputValue) {
+        if (isset($_GET[$inputValue])) {
+            array_push($test, true);
+        }
+    }
+    if (count($test)) {
+        return true;
+    }
+}
+
+
+// <input type='radio'  name='question_4' />
+// <label for='question_4_1'>Gewichte heben</label>
+// <input type='radio'  name='question_4_1' />
+// <label for='question_4_2'>Gehen</label>
+// <input type='radio'  name='question_4_2' />
+// <label for='question_4_4'>Wandern</label>
+// <input type='radio'  name='question_4_4' />
+// <label for='question_4_4'>Joggen</label>
+// <input type='radio'  name='question_4_4' />
+// <label for='question_4_5'>Rennen</label>
+// <input type='radio'  name='question_4_5' />
+// <label for='question_4_6'>Schwimmen</label>
+// <input type='radio'  name='question_4_6' />
+// <label for='question_4_7'>Tanzen</label>
+// <input type='radio'  name='question_4_7' />
+// <label for='question_4_8'>Aerobics</label>
+// <input type='radio'  name='question_4_8' />
+// <label for='question_4_9'>Pilates</label>
+// <input type='radio'  name='question_4_9' />
+// <label for='question_4_10'>Team Sport</label>
+// <input type='radio'  name='question_4_10' />
+// <label for='question_4_11'>Andere</label>
+// <input type='checkbox'  name='question_4_11' />
+
+
+
 ?>
 
 
@@ -136,17 +197,31 @@ oder sind schon fertig zubereitet?"];
     
    ";
                     }
-                    if (isset($_GET['question_4'])) {
-                        $_SESSION['number4'] = $_GET['question_4'];
+
+                    if (test($QUESTION_3)) {
+                        checkMultipleInput($QUESTION_3);
                         echo "   
-    <p for='question_5'>$USERDATA[4]</p>
-    </fieldset>
-    <fieldset class='fieldset_input'>
-    <label for='question_5'>1:Zu wenig 5: Zu viel</label>
-    <input type='range' min='1' max='5' value='3' class='slider' id='myRange' name='question_5'>
-   
-    ";
+                        <p for='question_5'>$USERDATA[4]</p>
+                        </fieldset>
+                        <fieldset class='fieldset_input'>
+                        <label for='question_5'>1:Zu wenig 5: Zu viel</label>
+                        <input type='range' min='1' max='5' value='3' class='slider' id='myRange' name='question_5'>
+
+                         ";
                     }
+
+
+                    // if (isset($_GET['question_4'])) {
+                    //     $_SESSION['number4'] = $_GET['question_4'];
+                    //     echo "   
+                    // <p for='question_5'>$USERDATA[4]</p>
+                    // </fieldset>
+                    // <fieldset class='fieldset_input'>
+                    // <label for='question_5'>1:Zu wenig 5: Zu viel</label>
+                    // <input type='range' min='1' max='5' value='3' class='slider' id='myRange' name='question_5'>
+
+                    // ";
+                    // }
                     if (isset($_GET['question_5'])) {
                         $_SESSION['number5'] = $_GET['question_5'];
                         echo "   
@@ -175,7 +250,8 @@ oder sind schon fertig zubereitet?"];
     <p for='question_8'>$USERDATA[7]</p>
     </fieldset>
     <fieldset class='fieldset_input'>
-    <input type='text' name='question_8' />
+    <label for='question_8'>Gib eine zahl ein</label>
+    <input type='number' name='question_8' />
       
     
     ";
@@ -186,7 +262,8 @@ oder sind schon fertig zubereitet?"];
     <p for='question_9'>$USERDATA[8]</p>
     </fieldset>
     <fieldset class='fieldset_input'>
-    <input type='text' name='question_9' />
+    <label for='question_9'>Gib eine zahl ein</label>
+    <input type='number' name='question_9' />
       
     
    ";
@@ -197,7 +274,8 @@ oder sind schon fertig zubereitet?"];
     <p for='question_10'>$USERDATA[9]</p>
     </fieldset>
     <fieldset class='fieldset_input'>
-    <input type='text' name='question_10' />
+    <label for='question_10'>Gib eine zahl ein</label>
+    <input type='number' name='question_10' />
           
     
   ";
