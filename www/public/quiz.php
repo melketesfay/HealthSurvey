@@ -10,7 +10,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 define("USERDATA",     []);
 
-$USERDATA = ["Wie gesund bist du körperlich? ", "Nimmst du Nahrungsergänzungsmittel?", "Wie wichtig ist köperliche Aktivität für
+$QUESTIONS = ["Wie gesund bist du körperlich? ", "Nimmst du Nahrungsergänzungsmittel?", "Wie wichtig ist köperliche Aktivität für
 dich?", "Welche zusätzliche körperliche Aktivität
 betreibst du am meisten?", "Hast du das Gefühl, zu wenig, genügend
 oder viel zu viel zusätzliche körperliche
@@ -28,7 +28,7 @@ oder sind schon fertig zubereitet?"];
 define("QUESTION_3", []);
 
 
-$QUESTION_3 = ['question_4', 'question_4_1', 'question_4_2', 'question_4_3', 'question_4_4', 'question_4_5', 'question_4_6', 'question_4_6', 'question_4_7', 'question_4_8', 'question_4_9', 'question_4_10', 'question_4_10'];
+$QUESTION_4 = ['question_4', 'question_4_1', 'question_4_2', 'question_4_3', 'question_4_4', 'question_4_5', 'question_4_6', 'question_4_6', 'question_4_7', 'question_4_8', 'question_4_9', 'question_4_10', 'question_4_10','question_4_11' ];
 
 
 
@@ -54,37 +54,10 @@ function test($input)
             array_push($test, true);
         }
     }
-    if (count($test)) {
+    if (count($test)>0) {
         return true;
     }
 }
-
-
-// <input type='radio'  name='question_4' />
-// <label for='question_4_1'>Gewichte heben</label>
-// <input type='radio'  name='question_4_1' />
-// <label for='question_4_2'>Gehen</label>
-// <input type='radio'  name='question_4_2' />
-// <label for='question_4_4'>Wandern</label>
-// <input type='radio'  name='question_4_4' />
-// <label for='question_4_4'>Joggen</label>
-// <input type='radio'  name='question_4_4' />
-// <label for='question_4_5'>Rennen</label>
-// <input type='radio'  name='question_4_5' />
-// <label for='question_4_6'>Schwimmen</label>
-// <input type='radio'  name='question_4_6' />
-// <label for='question_4_7'>Tanzen</label>
-// <input type='radio'  name='question_4_7' />
-// <label for='question_4_8'>Aerobics</label>
-// <input type='radio'  name='question_4_8' />
-// <label for='question_4_9'>Pilates</label>
-// <input type='radio'  name='question_4_9' />
-// <label for='question_4_10'>Team Sport</label>
-// <input type='radio'  name='question_4_10' />
-// <label for='question_4_11'>Andere</label>
-// <input type='checkbox'  name='question_4_11' />
-
-
 
 ?>
 
@@ -103,7 +76,7 @@ function test($input)
 
     <div class="form_container">
         <div class="form">
-            <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="GET">
+            <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" onsubmit="checkInput()" id="myForm" method="GET">
                 <fieldset class='fieldset_question'>
 
                     <?php
@@ -113,7 +86,7 @@ function test($input)
 
                         echo "   
                  
-  <p for='question_1'>$USERDATA[0]</p>
+  <p for='question_1'>$QUESTIONS[0]</p>
   </fieldset>
   <fieldset class='fieldset_input'>
   <label for='question_1'>1:Überhaupt nicht gesund 5: Extrem Gesund</label>
@@ -126,7 +99,7 @@ function test($input)
                     if (isset($_GET['question_1'])) {
                         $_SESSION['number1'] = $_GET['question_1'];
                         echo "   
-    <p for='question_2'>$USERDATA[1]</p>
+    <p for='question_2'>$QUESTIONS[1]</p>
     </fieldset>
     <fieldset class='fieldset_input' >
     <label for='question_2'>ja</label>
@@ -141,7 +114,7 @@ function test($input)
                     if (isset($_GET['question_2']) || isset($_GET['question_2_1'])) {
                         $_SESSION['number2'] = $_GET['question_2'] ?? $_GET['question_2_1'];
                         echo "   
-    <p for='question_3'>$USERDATA[2]</p>
+    <p for='question_3'>$QUESTIONS[2]</p>
     </fieldset>
     <fieldset class='fieldset_input'>
     
@@ -166,7 +139,7 @@ function test($input)
                     if (isset($_GET['question_3'])) {
                         $_SESSION['number3'] = $_GET['question_3'];
                         echo "  
-    <p for='question_4'>$USERDATA[3]</p>
+    <p for='question_4'>$QUESTIONS[3]</p>
     </fieldset>
     <fieldset class='fieldset_input'>
     <label for='question_4'>Keine zusätzliche körperliche Aktivität</label>
@@ -191,17 +164,18 @@ function test($input)
     <label for='question_4_9'>Pilates</label>
     <input type='radio'  name='question_4_9' />
     <label for='question_4_10'>Team Sport</label>
-    <input type='radio'  name='question_4_10' />
+    <input  type='radio'  name='question_4_10' />
     <label for='question_4_11'>Andere</label>
     <input type='checkbox'  name='question_4_11' />
+    
     
    ";
                     }
 
-                    if (test($QUESTION_3)) {
-                        checkMultipleInput($QUESTION_3);
+                    if (test($QUESTION_4)) {
+                        checkMultipleInput($QUESTION_4);
                         echo "   
-                        <p for='question_5'>$USERDATA[4]</p>
+                        <p for='question_5'>$QUESTIONS[4]</p>
                         </fieldset>
                         <fieldset class='fieldset_input'>
                         <label for='question_5'>1:Zu wenig 5: Zu viel</label>
@@ -211,21 +185,10 @@ function test($input)
                     }
 
 
-                    // if (isset($_GET['question_4'])) {
-                    //     $_SESSION['number4'] = $_GET['question_4'];
-                    //     echo "   
-                    // <p for='question_5'>$USERDATA[4]</p>
-                    // </fieldset>
-                    // <fieldset class='fieldset_input'>
-                    // <label for='question_5'>1:Zu wenig 5: Zu viel</label>
-                    // <input type='range' min='1' max='5' value='3' class='slider' id='myRange' name='question_5'>
-
-                    // ";
-                    // }
                     if (isset($_GET['question_5'])) {
                         $_SESSION['number5'] = $_GET['question_5'];
                         echo "   
-    <p for='question_6'>$USERDATA[5]</p>
+    <p for='question_6'>$QUESTIONS[5]</p>
     </fieldset>
     <fieldset class='fieldset_input'>
     <label for='question_6'>Gib eine zahl ein</label>
@@ -236,7 +199,7 @@ function test($input)
                     if (isset($_GET['question_6'])) {
                         $_SESSION['number6'] = $_GET['question_6'];
                         echo "   
-    <p for='question_7'>$USERDATA[6]</p>
+    <p for='question_7'>$QUESTIONS[6]</p>
     </fieldset>
     <fieldset class='fieldset_input'>
     <label for='question_7'>Gib eine zahl ein</label>
@@ -247,7 +210,7 @@ function test($input)
                     if (isset($_GET['question_7'])) {
                         $_SESSION['number7'] = $_GET['question_7'];
                         echo "   
-    <p for='question_8'>$USERDATA[7]</p>
+    <p for='question_8'>$QUESTIONS[7]</p>
     </fieldset>
     <fieldset class='fieldset_input'>
     <label for='question_8'>Gib eine zahl ein</label>
@@ -259,7 +222,7 @@ function test($input)
                     if (isset($_GET['question_8'])) {
                         $_SESSION['number8'] = $_GET['question_8'];
                         echo "  
-    <p for='question_9'>$USERDATA[8]</p>
+    <p for='question_9'>$QUESTIONS[8]</p>
     </fieldset>
     <fieldset class='fieldset_input'>
     <label for='question_9'>Gib eine zahl ein</label>
@@ -271,7 +234,7 @@ function test($input)
                     if (isset($_GET['question_9'])) {
                         $_SESSION['number9'] = $_GET['question_9'];
                         echo "   
-    <p for='question_10'>$USERDATA[9]</p>
+    <p for='question_10'>$QUESTIONS[9]</p>
     </fieldset>
     <fieldset class='fieldset_input'>
     <label for='question_10'>Gib eine zahl ein</label>
@@ -291,14 +254,14 @@ function test($input)
                 </fieldset>
                 <fieldset class='fieldset_buttons'>
                     <button onclick='window.history.go(-1); return false;' class='previous_button'>Previous</button>
-                    <input class='next_button' type='submit' value='Next' name="submit" />
+                    <input class='next_button' type='submit' value='Next' name="submit" onclick="return checkInput()"/>
                 </fieldset>
 
             </form>
         </div>
 
     </div>
-
+    <script src='validate.js'></script>
 </body>
 
 </html>
