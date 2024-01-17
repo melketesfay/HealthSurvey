@@ -88,12 +88,17 @@ function checkInput() {
     return false;
   }
 
-  inputNums.forEach((e) => {
-    if (e != null && e.value == "") {
-      alert("fill number");
+  //   else if (inputNumbers[0] != null && inputNumbers[0].value == "") {
+  //     alert("insert number");
+  //     return false;
+  //   }
+
+  for (let index = 0; index < inputNumbers.length; index++) {
+    if (inputNumbers[index] != null && inputNumbers[index].value == "") {
+      alert("insert number");
       return false;
     }
-  });
+  }
 
   document.getElementById("myForm").submit();
 }
