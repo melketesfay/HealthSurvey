@@ -9,15 +9,50 @@
 
 <body>
     <h1>Hallo This is your health survey</h1>
-    <?php 
+    <?php
 
-if (session_status() === PHP_SESSION_NONE) {
-    // Startet die Session, bzw. stellt sie wieder her, falls vorhanden.
-    session_start();
-}
-    echo "<pre>";
-    print_r($_SESSION);
-    
+    include_once "database.php";
+
+    if (session_status() === PHP_SESSION_NONE) {
+
+        session_start();
+    }
+    // // echo "<pre>";
+    // // print_r($_SESSION);
+
+
+    // foreach ($DATA as $key) {
+    //     echo $key . "<br>";
+    // }
+
+    // ksort($_SESSION);
+
+    // print_r($_SESSION);
+
+    $associatedData = [];
+
+    foreach ($QUESTIONDATABASE as $key) {
+        $index = array_search($key, $QUESTIONDATABASE);
+
+
+        $associatedData[$DATA[$index]] = $_SESSION[$key];
+    }
+
+    for ($i = 0; $i < 22; $i++) {
+        $associatedData[$DATA[$i]] = $_SESSION[$QUESTIONDATABASE[$i]];
+    }
+
+
+    echo "<h1>Hallo User<h1><h2>Das sind Ihre Angaben</h2><ul >";
+
+    foreach ($associatedData as $key => $value) {
+        echo " 
+        
+         <li>$key => $value</li>
+        
+        ";
+    }
+    echo "</ul>";
     ?>
 </body>
 
