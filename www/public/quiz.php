@@ -28,7 +28,7 @@ oder sind schon fertig zubereitet?"];
 define("QUESTION_3", []);
 
 
-$QUESTION_4 = ['question_4', 'question_4_1', 'question_4_2', 'question_4_3', 'question_4_4', 'question_4_5', 'question_4_6', 'question_4_6', 'question_4_7', 'question_4_8', 'question_4_9', 'question_4_10', 'question_4_10','question_4_11' ];
+$QUESTION_4 = ['question_4', 'question_4_1', 'question_4_2', 'question_4_3', 'question_4_4', 'question_4_5', 'question_4_6', 'question_4_6', 'question_4_7', 'question_4_8', 'question_4_9', 'question_4_10', 'question_4_10', 'question_4_11'];
 
 
 
@@ -54,7 +54,7 @@ function test($input)
             array_push($test, true);
         }
     }
-    if (count($test)>0) {
+    if (count($test) > 0) {
         return true;
     }
 }
@@ -254,7 +254,7 @@ function test($input)
                 </fieldset>
                 <fieldset class='fieldset_buttons'>
                     <button onclick='window.history.go(-1); return false;' class='previous_button'>Previous</button>
-                    <input class='next_button' type='submit' value='Next' name="submit" onclick="return checkInput()"/>
+                    <input class='next_button' type='submit' value='Next' name="submit" onclick="return checkInput()" />
                 </fieldset>
 
             </form>

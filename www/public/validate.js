@@ -6,10 +6,11 @@ let radioArr = Array.from(radios);
 console.log(typeof radioArr);
 
 function checkInput() {
+ 
   let test = radioArr.every((e) => e.checked == false);
-  if (test) {
+  if (test && radioArr.length >0) {
     alert("stop");
-
+    
     return false;
   }
 
