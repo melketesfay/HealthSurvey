@@ -45,6 +45,35 @@ function toggle(){
 // end toggle yes no buttons
 
 
+//disable selecting other activities after user selects no activity
+
+let noActivity = checkboxes[0];
+
+console.log(noActivity);
+
+if (noActivity == null || noActivity == undefined) {
+  console.log("not defined yet");
+}else{
+  noActivity.addEventListener("click", disableAll)
+}
+
+function disableAll(){
+  console.log("clicked no");
+  let checkbuttons = Array.from(checkboxes);
+  let rest = checkbuttons.slice(1,)
+  if (this.checked) {
+    
+
+    
+
+    rest.forEach(e=>e.setAttribute("disabled",""))
+    console.log(rest);
+  }else{
+    
+    rest.forEach(e=>e.removeAttribute("disabled"))
+  }
+}
+
 
 
 

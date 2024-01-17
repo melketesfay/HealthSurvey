@@ -25,15 +25,34 @@
     //     echo $key . "<br>";
     // }
 
-$associatedData = [];
+    // ksort($_SESSION);
+
+    // print_r($_SESSION);
+
+    $associatedData = [];
 
     foreach ($QUESTIONDATABASE as $key) {
+        $index = array_search($key, $QUESTIONDATABASE);
 
-array_push($associatedData,)
-        
+
+        $associatedData[$DATA[$index]] = $_SESSION[$key];
+    }
+
+    for ($i = 0; $i < 22; $i++) {
+        $associatedData[$DATA[$i]] = $_SESSION[$QUESTIONDATABASE[$i]];
     }
 
 
+    echo "<h1>Hallo User<h1><h2>Das sind Ihre Angaben</h2><ul style='display:flex;'>";
+
+    foreach ($associatedData as $key => $value) {
+        echo " 
+        
+         <li>$key => $value</li>
+        
+        ";
+    }
+    echo "</ul>";
     ?>
 </body>
 
