@@ -9,15 +9,31 @@
 
 <body>
     <h1>Hallo This is your health survey</h1>
-    <?php 
+    <?php
 
-if (session_status() === PHP_SESSION_NONE) {
-    // Startet die Session, bzw. stellt sie wieder her, falls vorhanden.
-    session_start();
-}
-    echo "<pre>";
-    print_r($_SESSION);
-    
+    include_once "database.php";
+
+    if (session_status() === PHP_SESSION_NONE) {
+
+        session_start();
+    }
+    // // echo "<pre>";
+    // // print_r($_SESSION);
+
+
+    // foreach ($DATA as $key) {
+    //     echo $key . "<br>";
+    // }
+
+$associatedData = [];
+
+    foreach ($QUESTIONDATABASE as $key) {
+
+array_push($associatedData,)
+        
+    }
+
+
     ?>
 </body>
 
