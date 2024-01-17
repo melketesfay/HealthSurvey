@@ -2,6 +2,10 @@ let radios = document.querySelectorAll("input[type='radio']");
 
 let checkboxes = document.querySelectorAll("input[type='checkbox']");
 
+let inputNumbers = document.querySelectorAll("input[type='number']");
+
+console.log(inputNumbers, "hallo");
+
 function checkAtleastOneSelected(tobeChecked) {
   let test = tobeChecked.every((e) => e.checked == false);
   if (test && tobeChecked.length > 0) {
@@ -65,18 +69,31 @@ function checkInput() {
   // checkAtleastOneSelected(checkboxes);
   let radioBtn = Array.from(radios);
   let checkBtn = Array.from(checkboxes);
+  let inputNums = Array.from(inputNumbers);
 
   let testRadioBtn = radioBtn.every((e) => e.checked == false);
   let testCheckBtn = checkBtn.every((e) => e.checked == false);
+
+  //make sure at least one checkbox is selected
+
   if (testCheckBtn && checkBtn.length > 0) {
     alert("checkboxes not selected");
 
     return false;
+
+    //make sure at least one radiobutton is selected
   } else if (testRadioBtn && radioBtn.length > 0) {
     alert("radios not selected");
 
     return false;
   }
+
+  inputNums.forEach((e) => {
+    if (e != null && e.value == "") {
+      alert("fill number");
+      return false;
+    }
+  });
 
   document.getElementById("myForm").submit();
 }
