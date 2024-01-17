@@ -43,7 +43,7 @@
     }
 
 
-    echo "<h1>Hallo User<h1><h2>Das sind Ihre Angaben</h2><ul style='display:flex;'>";
+    echo "<h1>Hallo User<h1><h2>Das sind Ihre Angaben</h2><ul >";
 
     foreach ($associatedData as $key => $value) {
         echo " 

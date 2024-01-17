@@ -67,6 +67,7 @@ function disableAll(){
     
 
     rest.forEach(e=>e.setAttribute("disabled",""))
+    rest.forEach(e=>e.checked=false)
     console.log(rest);
   }else{
     
