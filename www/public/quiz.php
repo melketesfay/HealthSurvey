@@ -30,7 +30,7 @@ define("QUESTION_3", []);
 
 $QUESTION_4 = ['question_4', 'question_4_1', 'question_4_2', 'question_4_3', 'question_4_4', 'question_4_5', 'question_4_6', 'question_4_6', 'question_4_7', 'question_4_8', 'question_4_9', 'question_4_10', 'question_4_10', 'question_4_11'];
 
-
+$QUESTIONS =  ['question_1', 'question_2', 'question_3', 'question_4', 'question_5', 'question_6', 'question_7', 'question_8', 'question_9', 'question_10'];
 
 function checkMultipleInput($input)
 {
@@ -149,8 +149,8 @@ function test($input)
     <input type='radio'  name='question_4_1' />
     <label for='question_4_2'>Gehen</label>
     <input type='radio'  name='question_4_2' />
-    <label for='question_4_4'>Wandern</label>
-    <input type='radio'  name='question_4_4' />
+    <label for='question_4_3'>Wandern</label>
+    <input type='radio'  name='question_4_3' />
     <label for='question_4_4'>Joggen</label>
     <input type='radio'  name='question_4_4' />
     <label for='question_4_5'>Rennen</label>
