@@ -4,6 +4,7 @@
 
 body{
     margin: 0;
+    font-family: 'Inter', sans-serif;
 }
 
 .container{
@@ -21,6 +22,16 @@ h1{
     font-size: 4rem;
     font-weight: bolder;
     border-bottom: 2px solid  #52048a;
+}
+
+h2{
+    align-self: center;
+    color: #52048a;
+    font-size: 4rem;
+    font-weight: bolder;
+    font-weight: 900;
+   
+
 }
 .bewertung{
     display: flex;
@@ -81,9 +92,10 @@ p{
 
 
 @media only screen and (max-width: 900px) {
-    h1 {
+    h2 {
       font-size: 1.6rem;
     }
+  
     p{
         font-size: 1.2rem;
     }

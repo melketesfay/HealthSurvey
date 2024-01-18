@@ -1,13 +1,3 @@
-<?php
-
-include_once "database.php";
-
-if (session_status() === PHP_SESSION_NONE) {
-
-    session_start();
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,12 +5,14 @@ if (session_status() === PHP_SESSION_NONE) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/8e475b60fe.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="table.css">
     <title>Document</title>
 </head>
 
 <body>
-
 
     <div class="container">
 
@@ -33,10 +25,15 @@ if (session_status() === PHP_SESSION_NONE) {
         if (session_status() === PHP_SESSION_NONE) {
 
             session_start();
-        }
 
-        echo "<h1>Hallo " . $_SESSION['username'] . " </h1>
-        <h1>Hallo This is your health survey</h1>";
+            if (isset($_GET['logout'])) {
+                session_unset();
+                session_destroy();
+                header('location: /index.php');
+            }
+        }
+        echo "<h2>Hallo " . $_SESSION['username'] . "</h2>";
+        echo "<h2>Das sind Ihre Angaben</h2>";
 
         $associatedData = [];
 
@@ -129,7 +126,7 @@ if (session_status() === PHP_SESSION_NONE) {
         }
 
 
-        echo "<h1>Bewertung</h1><div class='bewertung'>";
+        echo "<h2>Bewertung</h2><div class='bewertung'>";
 
         gesundheitBewertung();
 
@@ -143,7 +140,10 @@ if (session_status() === PHP_SESSION_NONE) {
         // Schwellen
 
         ?>
-
+        <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="get">
+            <input type="submit" value="log out" name="logout">
+            <button onclick='window.history.go(-10); return false;' value="Wiederholen">Wiederholen</button>
+        </form>
     </div>
 </body>
 
