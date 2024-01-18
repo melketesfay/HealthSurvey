@@ -4,25 +4,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>index</title>
+  <link rel="stylesheet" href="wireframe.css">
 </head>
 
 <body>
 
+  <div class="form_container">
+    <div class="form_index">
+      <form method="post" action="./login-aux.php">
+        <fieldset class="login_fieldset">
+          <label for="username">Username</label>
+          <input type="text" name="username" placeholder="username">
+          <label for="password">Password</label>
+          <input type="password" name="password" placeholder="password">
+        </fieldset>
+        <fieldset class="fieldset_buttons_login">
+          <input class="next_button" type="submit" value="Login" />
+        </fieldset>
+      </form>
+    </div>
 
 
-  <form action="quiz.php" method="GET">
+
+    </form>
 
 
-
-
-    <input type='text' name='start' id='name'>
-    <input type='submit' value='start' name="btn">;
-
-  </form>
-
-
-
+  </div>
 
 
 
