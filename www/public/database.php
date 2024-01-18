@@ -157,28 +157,28 @@ $FORMELEMENTS = ["
     <li class='right_range_etiquete'>Zu viel</li>
 </ul>
  <label for='question_5'></label>
- <input type='range' min='1' max='5' value='3' class='slider' id='myRange' name='question_5'>
+ <input type='range' min='0' max='5' value='3' class='slider' id='myRange' name='question_5'>
 
   ", "   
   <p for='question_6'>$QUESTIONS[5]</p>
   </fieldset>
   <fieldset class='fieldset_input'>
   <label for='question_6'>Gib eine zahl ein</label>
-  <input type='number' min='1' max = '5' required name='question_6' />
+  <input type='number' min='0' max = '5' required name='question_6' />
  
 ", "   
 <p for='question_7'>$QUESTIONS[6]</p>
 </fieldset>
 <fieldset class='fieldset_input'>
 <label for='question_7'>Gib eine zahl ein</label>
-<input type='number' name='question_7' min='1' max = '5' required />
+<input type='number' name='question_7' min='0' max = '5' required />
 
 ", "   
 <p for='question_8'>$QUESTIONS[7]</p>
 </fieldset>
 <fieldset class='fieldset_input'>
 <label for='question_8'>Gib eine zahl ein</label>
-<input type='number' name='question_8' min='1' max = '5' required />
+<input type='number' name='question_8' min='0' max = '5' required />
   
 
 ", "  
@@ -186,7 +186,7 @@ $FORMELEMENTS = ["
 </fieldset>
 <fieldset class='fieldset_input'>
 <label for='question_9'>Gib eine zahl ein</label>
-<input type='number' name='question_9' min='1' max = '5' required/>
+<input type='number' name='question_9' min='0' max = '5' required/>
   
 
 ", "   
@@ -194,7 +194,7 @@ $FORMELEMENTS = ["
 </fieldset>
 <fieldset class='fieldset_input'>
 <label for='question_10'>Gib eine zahl ein</label>
-<input type='number' name='question_10' min='1' max = '5' required/>
+<input type='number' name='question_10' min='0' max = '5' required/>
       
 
 "];

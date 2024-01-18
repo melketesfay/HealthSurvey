@@ -77,13 +77,13 @@ function checkInput() {
   //make sure at least one checkbox is selected
 
   if (testCheckBtn && checkBtn.length > 0) {
-    alert("checkboxes not selected");
+    alert("please select atleast one button");
 
     return false;
 
     //make sure at least one radiobutton is selected
   } else if (testRadioBtn && radioBtn.length > 0) {
-    alert("radios not selected");
+    alert("please select atleast one button");
 
     return false;
   }

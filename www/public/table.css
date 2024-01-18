@@ -20,13 +20,7 @@ body{
 .title{
     margin-top: 0;
 }
-h1{
-    align-self: center;
-    color: #52048a;
-    font-size: 4rem;
-    font-weight: bolder;
-    border-bottom: 2px solid  #52048a;
-}
+
 
 h2{
     align-self: center;
@@ -68,14 +62,14 @@ form{
     justify-content: center;
     gap: 2rem;
     margin-bottom: 10rem;
-   
+    margin-top: 5rem;
   
 }
 
 input{
     font-size: 1.2rem;
     font-weight: bold;
-    padding: 0.3rem 0.5rem;
+    padding: 0.5rem 1rem;
     background-color: #52048a;
     border-radius: 0.5rem;
     color: white;
@@ -84,7 +78,7 @@ input{
 button{
     font-size: 1.2rem;
     font-weight: bold;
-    padding: 0.3rem 0.5rem;
+    padding: 0.5rem 1rem;
     background-color: #52048a;
     border-radius: 0.3rem;
     color: white;
@@ -137,5 +131,13 @@ button{
 
     .container{
         margin: 1rem 0.5rem;
+    }
+  }
+
+
+
+  @media only screen and (min-width: 900px) {
+    table{
+        font-size: 1.2rem;
     }
   }

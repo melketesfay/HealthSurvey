@@ -31,7 +31,9 @@ function login($username, $password)
         return TRUE;
     }
 
+    header('Location:/index.php');
     echo "pasword fail";
+
     return false;
 }
 

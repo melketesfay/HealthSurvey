@@ -1,6 +1,17 @@
+
+:root{
+    /* colors */
+    --main-body-color: #FFE5E5 ;
+    --background-container-color: #E0AED0; 
+    --card-background-color:#AC87C5; 
+    --button-background-color: #756AB6; 
+}
+
+
 *{
     box-sizing: border-box;
     margin: 0px; 
+ 
     padding: 0px;
 }
 
@@ -13,8 +24,11 @@ body{
     justify-items: center;
     padding: 10px; 
     width: 100vw; 
+    background-color: var(--main-body-color);
     
 }
+
+
 
 .form_container{
     display: flex;
@@ -24,13 +38,13 @@ body{
     justify-items:center ;
     align-items: center;
     border: solid black 1px;
-    border-radius: 5px;
+    border-radius: 5px; 
     padding: 10px;
     height: 97vh;
    width: 95vw;
+   background-color: var(--background-container-color);
 
 }
-
 .fieldset_question{
     display: flex;
     flex-direction: column;
@@ -42,6 +56,8 @@ body{
     border-radius: 5px;
     margin: 10px; 
     height: 35vh;
+    padding: 10%;
+    background-color: var(--card-background-color);
 }
 
 .fieldset_input{
@@ -54,18 +70,21 @@ body{
     border-radius: 5px;
     margin: 10px; 
     width: 80vw;
+    padding: 10%; 
+    background-color: var(--card-background-color);
 }
 .fieldset_buttons{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    justify-self: center;
+    justify-items: center;
     border: solid black 1px;
     border-radius: 5px;
     width: 80vw;
     height: 15vh;
     margin: 10px; 
+    background-color: var(--card-background-color);
 }
 
 .previous_button{
@@ -73,6 +92,8 @@ body{
     border: solid black 1px;
     height: 5vh;
     width: 20vw;
+    background-color: var(--button-background-color);
+    border-radius: 5px; 
 }
 
 .next_button{
@@ -81,4 +102,139 @@ body{
     border: solid black 1px;
     height: 5vh;
     width: 20vw;
+    background-color: var(--button-background-color);
+    border-radius: 5px; 
+}
+
+.fieldset-range{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap:5%;
+
+}
+.fieldset-range label {
+    transform: rotate(45%); 
+}
+
+/* Index.php specific*/
+.login_fieldset{
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        width: 80vw;
+        align-items: center;
+        border: solid black 1px;
+        border-radius: 5px;
+        margin: 10px; 
+        height: 35vh;
+        background-color: var(--card-background-color);
+    }
+
+.fieldset_buttons_login{
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        width: 80vw;
+        align-items: center;
+        border: solid black 1px;
+        border-radius: 5px;
+        margin: 10px; 
+        height: 35vh;
+        background-color: var(--card-background-color);
+}
+
+
+/* index.php specific*/
+
+/* range */
+input[type="range"] {
+    accent-color: var(--main-body-color);
+    width: 100%;
+  }
+ul{
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+li{
+    font-size: smaller;
+    list-style-type: none;
+}
+.right_range_etiquete{
+    display: flex;
+    justify-self: flex-start;
+    width: 20%;
+    justify-content: right;
+    align-items: end;
+}
+.left_range_etiquete{
+    display: flex;
+    justify-self: flex-end;
+    width: 20%;
+    justify-content:left;
+    align-items: end
+}
+/* radio */
+
+.fieldset_imput_radio{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+.radio_plus_label{
+    display: flex;
+    flex-direction: column;
+    gap: 2%; 
+}
+input[type="radio" ] {
+    accent-color: var(--main-body-color);
+    background-color: var(--card-background-color);
+}
+
+/* checkbox */
+
+.fieldset_checkbox{
+  display:flex; 
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  gap:5px; 
+}
+.ckeckbox_plus_label{
+    display: flex;
+    flex-direction: row-reverse;
+    border: solid black 1px;
+    border-radius: 5px;
+    background-color: var(--button-background-color);
+    gap:1%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    justify-content: center;
+
+}
+
+input[type="checkbox" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 3px 4px;
+    padding: initial;
+    border: initial;
+    accent-color: var(--main-body-color);
+}
+input[type="number" i]{
+    height: 30%;
+    width:25%; 
+    font-size:130%;
+    text-align: center;
+    border-radius: 5px;
 }
