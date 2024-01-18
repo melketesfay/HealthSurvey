@@ -28,6 +28,7 @@ h1{
     align-self: center;
     align-items: center;
     justify-content: center;
+    min-height: 100px;
 }
 
 i{
@@ -41,8 +42,7 @@ p{
     font-weight: bold;
     margin: 0;
     padding: 0;
-    justify-self: flex-end;
-    align-self: flex-end;
+    
    
     
 }
@@ -89,5 +89,9 @@ p{
     }
     i{
         font-size: 2rem;
+    }
+
+    .container{
+        margin: 1rem 0.5rem;
     }
   }
