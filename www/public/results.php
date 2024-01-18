@@ -18,26 +18,15 @@
 
         session_start();
     }
-    // // echo "<pre>";
-    // // print_r($_SESSION);
 
-
-    // foreach ($DATA as $key) {
-    //     echo $key . "<br>";
-    // }
-
-    // ksort($_SESSION);
-
-    // print_r($_SESSION);
 
     $associatedData = [];
 
-    foreach ($QUESTIONDATABASE as $key) {
-        $index = array_search($key, $QUESTIONDATABASE);
+    // foreach ($QUESTIONDATABASE as $key) {
+    //     $index = array_search($key, $QUESTIONDATABASE);
 
-
-        $associatedData[$DATA[$index]] = $_SESSION[$key];
-    }
+    //     $associatedData[$DATA[$index]] = $_SESSION[$key];
+    // }
 
     for ($i = 0; $i < 22; $i++) {
         $associatedData[$DATA[$i]] = $_SESSION[$QUESTIONDATABASE[$i]];
@@ -121,7 +110,7 @@ echo "<br>";
 gesundheitBewertung();
 
 
-    
+
 
 
 // Berechnung: Schwellenwerte für “gesund” (mittlere Wichtigkeit bei Frage 3 sowie mindestens
