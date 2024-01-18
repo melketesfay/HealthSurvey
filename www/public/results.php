@@ -72,7 +72,63 @@ foreach ($finalArray as $key => $value) {
 
 echo "</tr></table>";
 
+
+// Bewertung
+
+// check how many aktivities where selected
+$koerperlicheAktivität = [];
+
+foreach ($QUESTION_4 as $key) {
+    $koerperlicheAktivität[$key]=$_SESSION[$key];
+}
+array_shift($koerperlicheAktivität);
+
+
+$koerperlicheAktivität = array_filter($koerperlicheAktivität,"onlySelected");
+print_r($koerperlicheAktivität);
+$anzahlAktivities = count($koerperlicheAktivität);
+$frage3 = $_SESSION["question_3"];
+$Kohlenhydrate = $_SESSION["question_6"];
+$proteine = $_SESSION["question_7"];
+$gemüse = $_SESSION["question_8"];
+$früchte = $_SESSION["question_9"];
+
+function gesundheitBewertung() {
+
+// Bewertungsparameter
+
+// check how many aktivities where selected
+$koerperlicheAktivität = [];
+
+
+
+$frage3 = $_SESSION["question_3"];
+$Kohlenhydrate = $_SESSION["question_6"];
+$proteine = $_SESSION["question_7"];
+$gemüse = $_SESSION["question_8"];
+$früchte = $_SESSION["question_9"];
+
+    if (intval($frage3)>=3&& intval($GLOBALS["anzahlAktivities"])>0 && intval($Kohlenhydrate)>=2&&intval($proteine)>=2&&intval($gemüse)>0&&intval($früchte)>0) {
+        echo "Toll du bist gesund";
+    }else {
+        echo "fange lieber bald mit sport an";
+    }
+echo "<br>";
+
+}
+
+
+gesundheitBewertung();
+
+
     
+
+
+// Berechnung: Schwellenwerte für “gesund” (mittlere Wichtigkeit bei Frage 3 sowie mindestens
+// eine zusätzliche körperliche Aktivität, dazu ausgeglichene Ernährung mit mind. 2x
+// Kohlenhydrate, 2x Protein, 1x Gemüse, 1x Früchte); “ungesund” unterhalb dieser
+// Schwellen
+
     ?>
 </body>
 
