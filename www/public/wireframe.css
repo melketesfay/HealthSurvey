@@ -4,11 +4,11 @@
 
 :root{
     /* colors */
-    --main-body-color: #FFE5E5 ;
-    --background-container-color: #E0AED0; 
-    --card-background-color:#AC87C5; 
-    --button-background-color: #756AB6;
-    --font-color: black;
+    --main-body-color:#8c0ae2 ;
+    --background-container-color: #850ad6; 
+    --card-background-color:#7507bf; 
+    --button-background-color: #56058d;
+    --font-color: rgb(255, 255, 255);
     --font-weight-button: 600;
     --font-size-button: x-large; 
     --font-weight-text: 400;
@@ -34,7 +34,8 @@
     font-family: "Inter", sans-serif;
     font-size: var(--font-size-text);
     font-weight:var(--font-weight-text);
-    color: var(--font-color);
+    border: none;
+    
 }
 
 
@@ -48,13 +49,19 @@ body{
     padding: 10px; 
     width: 100vw; 
     background-color: var(--main-body-color);
+   
     
+}
+
+label{
+    color: white;
 }
 
 h1{
     font-weight: 600; 
 }
 .div_welcome_text{
+    color: white;
     padding:1rem;
 }
 
@@ -63,15 +70,17 @@ h1{
     flex-direction: column;
     justify-content: space-around;
     align-content: center;
-    justify-items:cenheader("Location: /index.php")ter ;
+    justify-items:center;
     align-items: center;
-    border: solid black 1px;
-    border-radius: 5px; 
+    /* border: solid black 1px; */
+    border-radius: 10px; 
     padding: 10px;
     height: 97vh;
    width: 95vw;
    max-width: 900px; 
    background-color: var(--background-container-color);
+   color: white;
+   
 
 }
 .fieldset_question{
@@ -82,8 +91,8 @@ h1{
     width: 80vw;
     max-width: 720px;
     align-items: center;
-    border: solid black 1px;
-    border-radius: 5px;
+    /* border: solid black 1px; */
+    border-radius: 10px;
     margin: 10px; 
     height: 35vh;
     padding: 10%;
@@ -96,8 +105,8 @@ h1{
     justify-content: center;
     height: 40vh; 
     align-items: center;
-    border: solid black 1px;
-    border-radius: 5px;
+    /* border: solid black 1px; */
+    border-radius: 10px;
     margin: 10px; 
     width: 80vw;
     max-width: 720px;
@@ -105,6 +114,7 @@ h1{
     background-color: var(--card-background-color);
     font-size: var(--font-weight-question);
     font-weight: var(--font-weight-question);
+    color: #27023f;
 }
 .fieldset_buttons{
     display: flex;
@@ -112,8 +122,8 @@ h1{
     justify-content: space-evenly;
     align-items: center;
     justify-items: center;
-    border: solid black 1px;
-    border-radius: 5px;
+    /* border: solid black 1px; */
+    border-radius: 10px;
     width: 80vw;
     max-width: 720px;
     height: 15vh;
@@ -133,9 +143,9 @@ h1{
 } 
 .previous_button{
     background-color: white;
-    border: solid black 1px;
+    /* border: solid black 1px; */
     background-color: var(--button-background-color);
-    border-radius: 5px; 
+    border-radius: 10px; 
     font-size: var(--font-size-button);
     font-weight: var(--font-weight-button);
     padding: 5px; 
@@ -146,15 +156,16 @@ h1{
 .next_button{
 
     background-color: white;
-    border: solid black 1px;
+    /* border: solid black 1px; */
  
     background-color: var(--button-background-color);
-    border-radius: 5px; 
+    border-radius: 10px; 
     font-size: var(--font-size-button);
     font-weight: var(--font-weight-button);
     padding: 5px;
     max-width: 112.72px;
     width: 112.72px;
+    color: white;
 
 }
 
@@ -177,11 +188,13 @@ h1{
         width: 80vw;
         max-width: 720px;
         align-items: center;
-        border: solid black 1px;
-        border-radius: 5px;
+        /* border: solid black 1px; */
+        border-radius: 10px;
         margin: 10px; 
         height: 35vh;
         background-color: var(--card-background-color);
+        color: #27023f;
+       
     }
 
 .fieldset_buttons_login{
@@ -192,13 +205,27 @@ h1{
         width: 80vw;
         max-width: 720px;
         align-items: center;
-        border: solid black 1px;
-        border-radius: 5px;
+        /* border: solid black 1px; */
+        border-radius: 10px;
         margin: 10px; 
         height: 35vh;
         background-color: var(--card-background-color);
 }
 
+
+/* type text */
+input[type="text"] {
+    border-radius: 0.2rem;
+    width: 90%;
+  }
+  input[type="password"] {
+    border-radius: 0.2rem;
+    width: 90%;
+  }
+
+  input[type="submit"] {
+   color: white;
+  }
 
 /* index.php specific*/
 
@@ -219,8 +246,15 @@ li{
     list-style-type: none;
     font-size: var(--font-size-lables);
     font-weight: var(--font-weight-lables);
+    color: white;
     
 }
+
+
+button{
+    color: white;
+}
+
 .right_range_etiquete{
     display: flex;
     justify-self: flex-start;
@@ -252,11 +286,11 @@ li{
     font-size: var(--font-size-lables);
     font-weight: var(--font-weight-lables);
 }
-/* input[type="radio" ] {
-    /* accent-color: var(--main-body-color); */
-    /* background-color: var(--card-background-color);
-} */ 
+input[type="radio" ] {
+    accent-color: #44036e; 
+    /* background-color: var(--card-background-color);*/
 
+}
 /* checkbox */
 
 .fieldset_checkbox{
@@ -269,8 +303,8 @@ li{
 .ckeckbox_plus_label{
     display: flex;
     flex-direction: row-reverse;
-    border: solid black 1px;
-    border-radius: 5px;
+    /* border: solid black 1px; */
+    border-radius: 10px;
     background-color: var(--button-background-color);
     gap:1%;
     flex-grow: 1;
@@ -297,8 +331,9 @@ input[type="number" i]{
     width: 25%;
     font-size:130%;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 10px;
     text-transform: capitalize;
     font-size: var(--font-size-lables);
     font-weight: var(--font-weight-lables);
+    
 }

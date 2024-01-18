@@ -65,8 +65,8 @@ $FORMELEMENTS = ["
 </fieldset>
 <fieldset class='fieldset_input'>
 <ul class='range_etiquetes'>
-    <li class='left_range_etiquete'>Überhaupt nicht gesund</li>
-    <li class='right_range_etiquete'>Extrem Gesund</li>
+    <li class='left_range_etiquete'>Nicht gesund</li>
+    <li class='right_range_etiquete'>Sehr gesund</li>
 </ul>
 <label for='question_1'></label>
 <input type='range' min='1' max='5' value='3' step='0.5' class='slider' id='myRange' name='question_1' required>
@@ -91,7 +91,7 @@ $FORMELEMENTS = ["
  </fieldset>
  <fieldset class='fieldset_input'>
  <ul class='range_etiquetes'>
- <li class='left_range_etiquete'>Überhaupt nicht wichtig</li>
+ <li class='left_range_etiquete'>Nicht wichtig</li>
  <li class='right_range_etiquete'>Sehr Wichtig</li>
 </ul>
   <label for='question_3'></label>
