@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="table.css">
     <title>Document</title>
 </head>
 
@@ -43,19 +44,35 @@
     }
 
 
-    echo "<h1>Hallo User<h1><h2>Das sind Ihre Angaben</h2><ul >";
 
-    foreach ($associatedData as $key => $value) {
-        echo " 
-        
-         <li>$key => $value</li>
-        
-        ";
+    function onlySelected($var){
+        return $var != "off";
     }
-    echo "</ul>";
 
+$finalArray = array_filter($associatedData,"onlySelected");
 
-    // make a table of the data
+echo "<pre>";
+// print_r($finalArray);
+
+foreach ($finalArray as $key => $value) {
+    if($value == "on"){
+        $finalArray[$key] = "Ja";
+    }
+}
+// print_r($finalArray);
+ 
+    echo "<table id='customers'>  <tr>
+    <th>Survey Frage</th>
+    <th>Ihre Angabe</th>
+    
+  </tr> ";
+foreach ($finalArray as $key => $value) {
+    echo "<tr><td>".$key."</td>"."<td>".$value."</td></tr>";
+}
+
+echo "</tr></table>";
+
+    
     ?>
 </body>
 

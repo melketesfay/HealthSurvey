@@ -5,36 +5,36 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 
+include_once "database.php";
+
+
+// define("USERDATA",     []);
+
+// $QUESTIONS = ["Wie gesund bist du körperlich? ", "Nimmst du Nahrungsergänzungsmittel?", "Wie wichtig ist köperliche Aktivität für
+// dich?", "Welche zusätzliche körperliche Aktivität
+// betreibst du am meisten?", "Hast du das Gefühl, zu wenig, genügend
+// oder viel zu viel zusätzliche körperliche
+// Aktivitäten zu betreiben?", "An einem typischen Tag: Wie viele deiner
+// Malzeiten oder Snacks enthalten
+// Kohlenhydrate?", "An einem typischen Tag: Wie viele deiner
+// Malzeiten oder Snacks enthalten Protein?", "An einem typischen Tag: Wie viele deiner
+// Malzeiten oder Snacks enthalten
+// Gemüse?", "An einem typischen Tag: Wie viele deiner
+// Malzeiten oder Snacks enthalten Früchte?", "An einem typischen Tag: Wie viele deiner
+// Malzeiten kommen aus der Mikrowelle
+// oder sind schon fertig zubereitet?"];
 
 
 
-define("USERDATA",     []);
-
-$QUESTIONS = ["Wie gesund bist du körperlich? ", "Nimmst du Nahrungsergänzungsmittel?", "Wie wichtig ist köperliche Aktivität für
-dich?", "Welche zusätzliche körperliche Aktivität
-betreibst du am meisten?", "Hast du das Gefühl, zu wenig, genügend
-oder viel zu viel zusätzliche körperliche
-Aktivitäten zu betreiben?", "An einem typischen Tag: Wie viele deiner
-Malzeiten oder Snacks enthalten
-Kohlenhydrate?", "An einem typischen Tag: Wie viele deiner
-Malzeiten oder Snacks enthalten Protein?", "An einem typischen Tag: Wie viele deiner
-Malzeiten oder Snacks enthalten
-Gemüse?", "An einem typischen Tag: Wie viele deiner
-Malzeiten oder Snacks enthalten Früchte?", "An einem typischen Tag: Wie viele deiner
-Malzeiten kommen aus der Mikrowelle
-oder sind schon fertig zubereitet?"];
 
 
-define("QUESTION_3", []);
+// $QUESTION_4 = ['question_4', 'question_4_1', 'question_4_2', 'question_4_3', 'question_4_4', 'question_4_5', 'question_4_6', 'question_4_6', 'question_4_7', 'question_4_8', 'question_4_9', 'question_4_10', 'question_4_10', 'question_4_11'];
 
-
-$QUESTION_4 = ['question_4', 'question_4_1', 'question_4_2', 'question_4_3', 'question_4_4', 'question_4_5', 'question_4_6', 'question_4_6', 'question_4_7', 'question_4_8', 'question_4_9', 'question_4_10', 'question_4_10', 'question_4_11'];
-
-$ALLQUESTIONS =  ['question_1', 'question_2', 'question_3', 'question_4', 'question_5', 'question_6', 'question_7', 'question_8', 'question_9', 'question_10'];
+// $ALLQUESTIONS =  ['question_1', 'question_2', 'question_3', 'question_4', 'question_5', 'question_6', 'question_7', 'question_8', 'question_9', 'question_10'];
 
 
 
-$QUESTION_2 = ['question_2', 'question_2_1'];
+// $QUESTION_2 = ['question_2', 'question_2_1'];
 
 
 // make a session of the selected button with the value of the input field else make a session with "off"
@@ -99,7 +99,7 @@ function test($input)
   </fieldset>
   <fieldset class='fieldset_input'>
   <label for='question_1'>1:Überhaupt nicht gesund 5: Extrem Gesund</label>
-  <input type='range' min='1' max='5' value='3' class='slider' id='myRange' name='question_1'>
+  <input type='range' min='1' max='5' value='3' step='0.5' class='slider' id='myRange' name='question_1' required>
   
  
 
@@ -131,7 +131,7 @@ function test($input)
                         <fieldset class='fieldset_input'>
 
                          <label for='question_3'>1:Überhaupt nicht wichtig 5: Sehr Wichtig</label>
-                         <input type='range' min='1' max='5' value='3' class='slider' id='myRange' name='question_3'>";
+                         <input type='range' min='1' max='5' value='3' class='slider' id='myRange' name='question_3' required>";
                     }
 
 
@@ -209,7 +209,7 @@ function test($input)
     </fieldset>
     <fieldset class='fieldset_input'>
     <label for='question_6'>Gib eine zahl ein</label>
-    <input type='number' name='question_6' />
+    <input type='number' min='1' max = '5' required name='question_6' />
    
   ";
                     }
@@ -220,7 +220,7 @@ function test($input)
     </fieldset>
     <fieldset class='fieldset_input'>
     <label for='question_7'>Gib eine zahl ein</label>
-    <input type='number' name='question_7' />
+    <input type='number' name='question_7' min='1' max = '5' required />
    
     ";
                     }
@@ -231,7 +231,7 @@ function test($input)
     </fieldset>
     <fieldset class='fieldset_input'>
     <label for='question_8'>Gib eine zahl ein</label>
-    <input type='number' name='question_8' />
+    <input type='number' name='question_8' min='1' max = '5' required />
       
     
     ";
@@ -243,7 +243,7 @@ function test($input)
     </fieldset>
     <fieldset class='fieldset_input'>
     <label for='question_9'>Gib eine zahl ein</label>
-    <input type='number' name='question_9' />
+    <input type='number' name='question_9' min='1' max = '5' required/>
       
     
    ";
@@ -255,7 +255,7 @@ function test($input)
     </fieldset>
     <fieldset class='fieldset_input'>
     <label for='question_10'>Gib eine zahl ein</label>
-    <input type='number' name='question_10' />
+    <input type='number' name='question_10' min='1' max = '5' required/>
           
     
   ";
