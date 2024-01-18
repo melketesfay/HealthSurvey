@@ -64,82 +64,116 @@ $FORMELEMENTS = ["
 <p for='question_1'>$QUESTIONS[0]</p>
 </fieldset>
 <fieldset class='fieldset_input'>
-<label for='question_1'>1:Überhaupt nicht gesund 5: Extrem Gesund</label>
+<ul class='range_etiquetes'>
+    <li class='left_range_etiquete'>Überhaupt nicht gesund</li>
+    <li class='right_range_etiquete'>Extrem Gesund</li>
+</ul>
+<label for='question_1'></label>
 <input type='range' min='1' max='5' value='3' step='0.5' class='slider' id='myRange' name='question_1' required>
 
 
 
- ","   
+ ", "   
  <p for='question_2'>$QUESTIONS[1]</p>
  </fieldset>
- <fieldset class='fieldset_input' >
+ <fieldset class='fieldset_input fieldset_imput_radio' >
+ <div class='radio_plus_label'>
  <label for='ja'>ja</label>
-
  <input type='radio'  name='question_2' id='ja' />
-
+ </div>
+ <div class='radio_plus_label'>
  <label for='nein'>nein</label>
  <input type='radio'  name='question_2_1'  id='nein'/>
-
+ </div>
  
- ","   
+ ", "   
  <p for='question_3'>$QUESTIONS[2]</p>
  </fieldset>
  <fieldset class='fieldset_input'>
-
-  <label for='question_3'>1:Überhaupt nicht wichtig 5: Sehr Wichtig</label>
+ <ul class='range_etiquetes'>
+ <li class='left_range_etiquete'>Überhaupt nicht wichtig</li>
+ <li class='right_range_etiquete'>Sehr Wichtig</li>
+</ul>
+  <label for='question_3'></label>
   <input type='range' min='1' max='5' value='3' class='slider' id='myRange' name='question_3' required>", "  
   <p for='question_4'>$QUESTIONS[3]</p>
   </fieldset>
-  <fieldset class='fieldset_input'>
+  <fieldset class='fieldset_input fieldset_checkbox'>
+  <div class='ckeckbox_plus_label'>
   <label for='question_4'>Keine zusätzliche körperliche Aktivität</label>
-
   <input type='checkbox'  name='question_4' />
+  </div>
+  <div class='ckeckbox_plus_label'>
   <label for='question_4_1'>Gewichte heben</label>
   <input type='checkbox'  name='question_4_1' />
+  </div>
+  <div class='ckeckbox_plus_label'>
   <label for='question_4_2'>Gehen</label>
   <input type='checkbox'  name='question_4_2' />
+  </div>
+  <div class='ckeckbox_plus_label'>
   <label for='question_4_3'>Wandern</label>
   <input type='checkbox'  name='question_4_3' />
+  </div>
+  <div class='ckeckbox_plus_label'>
   <label for='question_4_4'>Joggen</label>
   <input type='checkbox'  name='question_4_4' />
+  </div>
+  <div class='ckeckbox_plus_label'>
   <label for='question_4_5'>Rennen</label>
   <input type='checkbox'  name='question_4_5' />
+  </div>
+  <div class='ckeckbox_plus_label'>
   <label for='question_4_6'>Schwimmen</label>
   <input type='checkbox'  name='question_4_6' />
+  </div>
+  <div class='ckeckbox_plus_label'>
   <label for='question_4_7'>Tanzen</label>
   <input type='checkbox'  name='question_4_7' />
+  </div>
+  <div class='ckeckbox_plus_label'>
   <label for='question_4_8'>Aerobics</label>
   <input type='checkbox'  name='question_4_8' />
+  </div>
+  <div class='ckeckbox_plus_label'>
   <label for='question_4_9'>Pilates</label>
   <input type='checkbox'  name='question_4_9' />
+  </div>
+  <div class='ckeckbox_plus_label'>
   <label for='question_4_10'>Team Sport</label>
   <input  type='checkbox'  name='question_4_10' />
+  </div>
+  <div class='ckeckbox_plus_label'>
   <label for='question_4_11'>Andere</label>
   <input type='checkbox'  name='question_4_11' />
+  </div>
   
-  
- ","   
+ ", "   
  <p for='question_5'>$QUESTIONS[4]</p>
  </fieldset>
  <fieldset class='fieldset_input'>
- <label for='question_5'>1:Zu wenig 5: Zu viel</label>
+ <ul class='range_etiquetes'>
+    <li class='left_range_etiquete'>Zu wenig</li>
+    <li class='right_range_etiquete'>Zu viel</li>
+</ul>
+ <label for='question_5'></label>
  <input type='range' min='1' max='5' value='3' class='slider' id='myRange' name='question_5'>
 
-  ","   
+  ", "   
   <p for='question_6'>$QUESTIONS[5]</p>
   </fieldset>
   <fieldset class='fieldset_input'>
   <label for='question_6'>Gib eine zahl ein</label>
   <input type='number' min='1' max = '5' required name='question_6' />
  
-","   
+", "   
 <p for='question_7'>$QUESTIONS[6]</p>
 </fieldset>
 <fieldset class='fieldset_input'>
 <label for='question_7'>Gib eine zahl ein</label>
 <input type='number' name='question_7' min='1' max = '5' required />
 
-","   
+", "   
 <p for='question_8'>$QUESTIONS[7]</p>
 </fieldset>
 <fieldset class='fieldset_input'>
@@ -147,7 +181,7 @@ $FORMELEMENTS = ["
 <input type='number' name='question_8' min='1' max = '5' required />
   
 
-","  
+", "  
 <p for='question_9'>$QUESTIONS[8]</p>
 </fieldset>
 <fieldset class='fieldset_input'>
@@ -155,7 +189,7 @@ $FORMELEMENTS = ["
 <input type='number' name='question_9' min='1' max = '5' required/>
   
 
-","   
+", "   
 <p for='question_10'>$QUESTIONS[9]</p>
 </fieldset>
 <fieldset class='fieldset_input'>
