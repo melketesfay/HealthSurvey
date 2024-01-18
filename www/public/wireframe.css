@@ -1,19 +1,42 @@
 
+
+
+
 :root{
     /* colors */
     --main-body-color: #FFE5E5 ;
     --background-container-color: #E0AED0; 
     --card-background-color:#AC87C5; 
-    --button-background-color: #756AB6; 
+    --button-background-color: #756AB6;
+    --font-color: black;
+    --font-weight-button: 600;
+    --font-size-button: x-large; 
+    --font-weight-text: 400;
+    --font-size-text:105%; 
+    --font-weight-lables:600; 
+    --font-size-lables: large; 
+    --font-size-questions:large;
+    --font-weight-question:500; 
+    
+
+    /* // <uniquifier>: Use a uniquifier for the class name
+// <weight>: Use a value from 100 to 900
+// <slant>: Use a value from -10 to 0 */
+
+
 }
 
 
 *{
     box-sizing: border-box;
     margin: 0px; 
- 
     padding: 0px;
+    font-family: "Inter", sans-serif;
+    font-size: var(--font-size-text);
+    font-weight:var(--font-weight-text);
+    color: var(--font-color);
 }
+
 
 body{
     display: flex;
@@ -28,20 +51,26 @@ body{
     
 }
 
-
+h1{
+    font-weight: 600; 
+}
+.div_welcome_text{
+    padding:1rem;
+}
 
 .form_container{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-content: center;
-    justify-items:center ;
+    justify-items:cenheader("Location: /index.php")ter ;
     align-items: center;
     border: solid black 1px;
     border-radius: 5px; 
     padding: 10px;
     height: 97vh;
    width: 95vw;
+   max-width: 900px; 
    background-color: var(--background-container-color);
 
 }
@@ -51,6 +80,7 @@ body{
     justify-content: center;
     align-content: center;
     width: 80vw;
+    max-width: 720px;
     align-items: center;
     border: solid black 1px;
     border-radius: 5px;
@@ -70,8 +100,11 @@ body{
     border-radius: 5px;
     margin: 10px; 
     width: 80vw;
+    max-width: 720px;
     padding: 10%; 
     background-color: var(--card-background-color);
+    font-size: var(--font-weight-question);
+    font-weight: var(--font-weight-question);
 }
 .fieldset_buttons{
     display: flex;
@@ -82,28 +115,47 @@ body{
     border: solid black 1px;
     border-radius: 5px;
     width: 80vw;
+    max-width: 720px;
     height: 15vh;
     margin: 10px; 
     background-color: var(--card-background-color);
 }
-
+.c_wellcome_button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    justify-items: center;
+    width: 80vw;
+    max-width: 720px;
+    height: 15vh;
+    margin: 10px; 
+} 
 .previous_button{
     background-color: white;
     border: solid black 1px;
-    height: 5vh;
-    width: 20vw;
     background-color: var(--button-background-color);
     border-radius: 5px; 
+    font-size: var(--font-size-button);
+    font-weight: var(--font-weight-button);
+    padding: 5px; 
+    width: 112.72px;
+    max-width: 112.72px;
 }
 
 .next_button{
 
     background-color: white;
     border: solid black 1px;
-    height: 5vh;
-    width: 20vw;
+ 
     background-color: var(--button-background-color);
     border-radius: 5px; 
+    font-size: var(--font-size-button);
+    font-weight: var(--font-weight-button);
+    padding: 5px;
+    max-width: 112.72px;
+    width: 112.72px;
+
 }
 
 .fieldset-range{
@@ -113,9 +165,7 @@ body{
     gap:5%;
 
 }
-.fieldset-range label {
-    transform: rotate(45%); 
-}
+
 
 /* Index.php specific*/
 .login_fieldset{
@@ -125,6 +175,7 @@ body{
         justify-content: center;
         align-content: center;
         width: 80vw;
+        max-width: 720px;
         align-items: center;
         border: solid black 1px;
         border-radius: 5px;
@@ -139,6 +190,7 @@ body{
         justify-content: center;
         align-content: center;
         width: 80vw;
+        max-width: 720px;
         align-items: center;
         border: solid black 1px;
         border-radius: 5px;
@@ -160,11 +212,14 @@ ul{
     flex-direction: row ;
     justify-content: space-between;
     width: 100%;
-    
+   
 }
 li{
     font-size: smaller;
     list-style-type: none;
+    font-size: var(--font-size-lables);
+    font-weight: var(--font-weight-lables);
+    
 }
 .right_range_etiquete{
     display: flex;
@@ -193,11 +248,14 @@ li{
     display: flex;
     flex-direction: column;
     gap: 2%; 
+    text-transform: capitalize;
+    font-size: var(--font-size-lables);
+    font-weight: var(--font-weight-lables);
 }
-input[type="radio" ] {
-    accent-color: var(--main-body-color);
-    background-color: var(--card-background-color);
-}
+/* input[type="radio" ] {
+    /* accent-color: var(--main-body-color); */
+    /* background-color: var(--card-background-color);
+} */ 
 
 /* checkbox */
 
@@ -218,6 +276,9 @@ input[type="radio" ] {
     flex-grow: 1;
     flex-shrink: 1;
     justify-content: center;
+    text-transform: capitalize;
+    font-size: var(--font-size-lables);
+    font-weight: var(--font-weight-lables);
 
 }
 
@@ -229,12 +290,15 @@ input[type="checkbox" i] {
     margin: 3px 3px 3px 4px;
     padding: initial;
     border: initial;
-    accent-color: var(--main-body-color);
+    /* accent-color: var(--main-body-color); */
 }
 input[type="number" i]{
-    height: 30%;
-    width:25%; 
+    height: 20%;
+    width: 25%;
     font-size:130%;
     text-align: center;
     border-radius: 5px;
+    text-transform: capitalize;
+    font-size: var(--font-size-lables);
+    font-weight: var(--font-weight-lables);
 }
