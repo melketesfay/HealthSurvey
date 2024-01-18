@@ -1,3 +1,13 @@
+<?php
+
+include_once "database.php";
+
+if (session_status() === PHP_SESSION_NONE) {
+
+    session_start();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,8 +21,9 @@
 
 <body>
 
+
     <div class="container">
-        <h1>Hallo This is your health survey</h1>
+
 
 
         <?php
@@ -24,6 +35,8 @@
             session_start();
         }
 
+        echo "<h1>Hallo " . $_SESSION['username'] . " </h1>
+        <h1>Hallo This is your health survey</h1>";
 
         $associatedData = [];
 
