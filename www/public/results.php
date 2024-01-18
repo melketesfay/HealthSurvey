@@ -32,8 +32,8 @@
                 header('location: /index.php');
             }
         }
-        echo "<h2>Hallo " . $_SESSION['username'] . "</h2>";
-        echo "<h2>Das sind Ihre Angaben</h2>";
+        echo "<h2 class='user'>Hallo " . $_SESSION['username'] . "</h2>";
+        echo "<h2 class='title'>Das sind Ihre Angaben</h2>";
 
         $associatedData = [];
 

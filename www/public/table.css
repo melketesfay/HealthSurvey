@@ -13,9 +13,13 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
-    max-width: 900px;
+    max-width: 1200px;
 }
 
+
+.title{
+    margin-top: 0;
+}
 h1{
     align-self: center;
     color: #52048a;
@@ -56,6 +60,34 @@ p{
     
    
     
+}
+
+form{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 10rem;
+   
+  
+}
+
+input{
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.3rem 0.5rem;
+    background-color: #52048a;
+    border-radius: 0.5rem;
+    color: white;
+}
+
+button{
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.3rem 0.5rem;
+    background-color: #52048a;
+    border-radius: 0.3rem;
+    color: white;
 }
 
 
