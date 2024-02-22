@@ -4,7 +4,8 @@ let checkboxes = document.querySelectorAll("input[type='checkbox']");
 
 let inputNumbers = document.querySelectorAll("input[type='number']");
 
-console.log(inputNumbers, "hallo");
+let range = document.querySelectorAll("input[type='range']");
+
 
 function checkAtleastOneSelected(tobeChecked) {
   let test = tobeChecked.every((e) => e.checked == false);
@@ -101,4 +102,19 @@ function checkInput() {
   }
 
   document.getElementById("myForm").submit();
+}
+
+
+
+
+// show range value
+
+
+range.forEach(e=>e.addEventListener("change", showValue));
+
+
+function showValue(){
+
+    document.querySelector("label").innerHTML = this.value;
+
 }
