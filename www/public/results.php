@@ -37,15 +37,20 @@
 
         $associatedData = [];
 
-        // foreach ($QUESTIONDATABASE as $key) {
-        //     $index = array_search($key, $QUESTIONDATABASE);
 
-        //     $associatedData[$DATA[$index]] = $_SESSION[$key];
-        // }
-
+        // created an associative array with the corrosponding question IDs and the given answers
         for ($i = 0; $i < 22; $i++) {
             $associatedData[$DATA[$i]] = $_SESSION[$QUESTIONDATABASE[$i]];
         }
+
+        // // debug melke (uncomment this to see what the associatedData array contains)
+        // echo "<pre>";
+
+        // var_dump($associatedData);
+
+        // echo "</pre>";
+
+
 
 
 
@@ -59,6 +64,7 @@
 
         // print_r($finalArray);
 
+        // changes selected values from "on" to "ja"
         foreach ($finalArray as $key => $value) {
             if ($value == "on") {
                 $finalArray[$key] = "Ja";
@@ -71,6 +77,8 @@
     <th>Ihre Angabe</th>
     
   </tr> ";
+
+        // darstellung der Angaben (bzw. nur ausgewählten daten) in einer Tabelle
         foreach ($finalArray as $key => $value) {
             echo "<tr><td>" . $key . "</td>" . "<td>" . $value . "</td></tr>";
         }
@@ -86,17 +94,25 @@
         foreach ($QUESTION_4 as $key) {
             $koerperlicheAktivität[$key] = $_SESSION[$key];
         }
+
+        // remove the first element "keine Körperliche aktivitäten
         array_shift($koerperlicheAktivität);
+        // print_r($koerperlicheAktivität);
 
-
+        // return only the selected values
         $koerperlicheAktivität = array_filter($koerperlicheAktivität, "onlySelected");
         // print_r($koerperlicheAktivität);
+
+        // Wie viele Körperliche aktivitäten
         $anzahlAktivities = count($koerperlicheAktivität);
+        // wie wichtig is körperliche Aktivität für dich (frage3)
         $frage3 = $_SESSION["question_3"];
         $Kohlenhydrate = $_SESSION["question_6"];
         $proteine = $_SESSION["question_7"];
         $gemüse = $_SESSION["question_8"];
         $früchte = $_SESSION["question_9"];
+
+
 
         function gesundheitBewertung()
         {

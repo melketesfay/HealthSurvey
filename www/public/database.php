@@ -3,6 +3,8 @@
 <?php
 
 
+// Alle Fragen für die Auswerung wichtig
+
 $DATA = ["Wie gesund bist du körperlich?", "Ich nehme Nahrungsergänzungsmittel", "Ich nehme keine Nahrungsergänzungsmittel", "Wie wichtig ist köperliche Aktivität für
 dich?", "Keine zusätzliche körperliche Aktivität", "Gewichte heben", "Gehen", "Wandern", "Joggen", "Rennen", "Schwimmen", "Tanzen", "Aerobics", "Pilates", "Team Sport", "Andere körperliche Aktivität", "Hast du das Gefühl, zu wenig, genügend
 oder viel zu viel zusätzliche körperliche
@@ -19,19 +21,14 @@ oder sind schon fertig zubereitet?"];
 
 
 
-// Keine zusätzliche körperliche Aktivität /
-// Gewichte heben / Gehen / Wandern / Joggen /
-// Rennen / Schwimmen / Tanzen / Aerobics /
-// Pilates / Team Sport / Andere (Radio Buttons
-// oder Checkboxen; “Andere” zusätzlich mit
-// einzeiligem Eingabefeld; OK-Button)
-
-
+// HTML name Attr für Fragen
 $QUESTIONDATABASE = ['question_1', 'question_2', 'question_2_1', 'question_3', 'question_4', 'question_4_1', 'question_4_2', 'question_4_3', 'question_4_4', 'question_4_5', 'question_4_6', 'question_4_7', 'question_4_8', 'question_4_9', 'question_4_10', 'question_4_11', 'question_5', 'question_6', 'question_7', 'question_8', 'question_9', 'question_10'];
 
 
 define("USERDATA",     []);
 
+
+// Alle Fragen für die Darstellung wichtig (Ist nicht gleich wie DATA)
 $QUESTIONS = ["Wie gesund bist du körperlich? ", "Nimmst du Nahrungsergänzungsmittel?", "Wie wichtig ist köperliche Aktivität für
 dich?", "Welche zusätzliche körperliche Aktivität
 betreibst du am meisten?", "Hast du das Gefühl, zu wenig, genügend
@@ -49,16 +46,20 @@ oder sind schon fertig zubereitet?"];
 
 
 
-
+// AuswahlMöglichkeiten für Frage 4
 $QUESTION_4 = ['question_4', 'question_4_1', 'question_4_2', 'question_4_3', 'question_4_4', 'question_4_5', 'question_4_6', 'question_4_6', 'question_4_7', 'question_4_8', 'question_4_9', 'question_4_10', 'question_4_10', 'question_4_11'];
 
+// AuswahlMöglichkeiten für Frage 2
+$QUESTION_2 = ['question_2', 'question_2_1'];
+
+// Alle Fragen ohne Subfragen
 $ALLQUESTIONS =  ['question_1', 'question_2', 'question_3', 'question_4', 'question_5', 'question_6', 'question_7', 'question_8', 'question_9', 'question_10'];
 
 
 
-$QUESTION_2 = ['question_2', 'question_2_1'];
 
 
+// Form Inhalt für die jeweiligen fragen
 $FORMELEMENTS = ["   
                  
 <p for='question_1'>$QUESTIONS[0]</p>

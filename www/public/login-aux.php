@@ -1,12 +1,14 @@
 <?php
 
-// check if session started if noit starts new session
+// check if session started if not starts new session
 if (session_status() === PHP_SESSION_NONE) {
     // Starte die Session
     session_start();
 }
 
 
+
+// Login function
 function login($username, $password)
 {
 

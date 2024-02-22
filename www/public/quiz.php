@@ -9,6 +9,8 @@ include_once "database.php";
 
 
 
+
+// für functionen diw mehr als 1 input möglichkeiten haben. Checks if the value is selected ans sets SESSION als sets SESSION of the option to off
 function checkMultipleInput($input)
 {
     foreach ($input as $inputValue) {
@@ -23,7 +25,7 @@ function checkMultipleInput($input)
 
 
 
-//check at least one button is selected
+//check at least one button is selected like isset for single choice questions
 
 function test($input)
 {
@@ -59,6 +61,8 @@ function test($input)
                 <fieldset class='fieldset_question'>
 
                     <?php
+
+                    // hier werden nacheiander die fragen neu gezeigt. Bedingung, dass die nächste Frage angezeigt wird ist, dass die Vorherige frage beantwortet worden ist
 
                     if (isset($_GET['start'])) {
                         $_SESSION['start'] = "User started Quiz";
